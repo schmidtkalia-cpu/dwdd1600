@@ -1,0 +1,108 @@
+body {
+  font-family: "Oxygen", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+margin: 0;
+}
+
+/* header stuff here */
+
+header span {
+ color: #024873; 
+ font-size: 2rem;
+ font-weight: 700;
+}
+
+header {
+  background-color: #eaeaea;
+  padding: 1rem 10px;
+}
+
+/* navigation stuff */
+
+nav{
+  background-color: #f2b705;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0 10px;
+  list-style-type: none;
+  display: flex;
+}
+
+nav a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #024873;
+  font-weight: 700;
+}
+
+nav li.active a {
+  background-color: #024873;
+  color: #f2b705;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* main section formatting here */
+
+main {
+  padding: 1rem 2vw;
+}
+
+main h1 {
+  color: #b40412;
+}
+
+main h2 {
+  color: #024873;
+  margin-bottom: .2rem;
+}
+
+main p {
+  color: #333;
+  margin: 0;
+}
+
+main ol {
+  padding: .5rem 30px;
+  background-color: #efefef;
+  list-style-type: lower-roman;
+}
+
+main dl dt {
+  color: #b40412;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+main dl dd {
+  color: #024873;
+  font-size: .9rem;
+}
+
+main ul {
+  list-style-type:circle;
+}
+
+main address {
+  font-weight: 400;
+  background-color: #f2b705;
+  padding: .5rem;
+  border: 3px solid #024873;
+  border-radius: .5rem;
+  width: 200px;
+}
+
+/* format footer section */
+
+footer {
+  background-color: #eaeaea;
+  text-align: center;
+  color: #333;
+}
