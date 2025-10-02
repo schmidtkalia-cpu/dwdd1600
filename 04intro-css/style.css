@@ -1,0 +1,148 @@
+/* ================================
+   Unit 04 – Site Styles (External CSS)
+   Concept: Kalia Schmidt’s Portfolio
+   Replace the HEX values below with your final palette from the design doc.
+   ================================ */
+
+/* ---- Color Tokens (swap to your palette) ---- */
+:root {
+  --bg: #efefe9;          /* light off-white background */
+  --surface: #e8d9cd;     /* soft beige surface sections */
+  --brand: #523d35;       /* rich brown brand color */
+  --brand-strong: #223030;/* deep green/teal for emphasis */
+  --text: #223030;        /* dark text for readability */
+  --muted: #959d90;       /* muted green-gray secondary text */
+  --accent: #bba58f;      /* warm tan accent */
+  --border: #959d90;      /* borders */
+}
+
+/* ---- Reset-ish ---- */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* ---- Body (required: style body tag) ---- */
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* required: font-family */
+  font-weight: 300;       /* weight 1 */
+  font-size: 1rem;        /* size 1 */
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), var(--surface)); /* required: background color */
+}
+
+/* Layout helper */
+.container { width: min(1100px, 92%); margin-inline: auto; }
+
+/* ---- Headings (required: h1, h2) ---- */
+h1, h2 { margin-block: 0.6em 0.3em; font-weight: 700; line-height: 1.2; } /* weight 2 */
+h1 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); } /* size 2 */
+h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }    /* size 3 */
+
+/* ---- Paragraphs (required: p) ---- */
+p { margin-block: 0.75em; color: var(--text); }
+
+/* ---- Header / Branding ---- */
+.site-header {
+  background: var(--brand-strong);  /* deep teal/dark green */
+  border-bottom: 1px solid var(--border);
+}
+
+.site-title .brand {
+  color: var(--accent);  /* warm tan highlight */
+  border-bottom: 4px solid var(--accent);
+}
+
+.site-slogan {
+  color: var(--surface); /* soft beige for contrast */
+}
+
+/* ---- Navigation (flex horizontal, no underline, 48px targets, way-finding) ---- */
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;                                      /* flexbox */
+  gap: 0.5rem;
+}
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;                                       /* min 48px */
+  padding: 0 14px;
+  text-decoration: none;                              /* remove underline */
+  color: var(--text);
+  border-radius: 10px;                                /* border radius */
+  transition: transform 120ms ease, background-color 120ms ease, color 120ms ease;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--border);
+  color: #e8d9cd;
+  transform: translateY(-1px);
+  outline: none;
+}
+/* Way-finding: current page */
+.site-nav a[aria-current="page"] {
+  background: var(--brand-strong);
+  color: #959d90;
+  font-weight: 700;
+}
+
+/* ---- Lists (bullet type, spacing, definition list styling) ---- */
+.fancy-list {
+  list-style-type: square;                            /* change bullet type */
+  padding-left: 1.2rem;                               /* padding */
+  margin: 0.5rem 0 1rem 0;                            /* margin */
+}
+.fancy-list li::marker { color: var(--accent); }
+
+.spaced-list { padding-left: 1.3rem; margin: 0.5rem 0 1.25rem 0; }
+.spaced-list li { margin-block: 0.35rem; }
+
+.terms { border-left: 4px solid var(--brand); padding-left: 0.9rem; }
+.terms dt { font-weight: 700; color: var(--brand); }
+.terms dd { margin: 0 0 0.75rem 0; }
+
+/* ---- Card (borders demo) ---- */
+.card {
+  background: #959d90;
+  border: 2px dashed var(--border);                   /* color/type/thickness */
+  border-radius: 12px;                                /* border radius */
+  padding: 1rem;
+}
+
+/* ---- Content links (hover pseudo-class) ---- */
+main a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+main a:hover,
+main a:focus-visible {
+  color: var(--accent);                               /* hover effect for links */
+  text-decoration-thickness: 3px;
+  outline: none;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ================================
+   Comments (required for rubric)
+   - External stylesheet in use
+   - Google Font loaded in HTML head
+   - font-family set; weights (300,700) + optional 500
+   - Multiple font sizes (base, h1, h2)
+   - Styled body, h1, h2, p, nav
+   - Lists: custom bullet, margins, padding, definition list styling
+   - Borders: color/type/thickness + radius
+   - Nav: flex horizontal, no underline, 48px targets, way-finding via [aria-current]
+   - Link hover state in content
+   - Background + text colors (replace HEX tokens with final palette)
+   ================================ */
