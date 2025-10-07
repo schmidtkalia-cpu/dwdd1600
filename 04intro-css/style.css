@@ -1,19 +1,19 @@
 /* ================================
    Unit 04 – Site Styles (External CSS)
    Concept: Kalia Schmidt’s Portfolio
-   Replace the HEX values below with your final palette from the design doc.
+   Palette: #223030, #523d35, #959d90, #bba58f, #e8d9cd, #efefe9
    ================================ */
 
-/* ---- Color Tokens (swap to your palette) ---- */
+/* ---- Color Tokens ---- */
 :root {
   --bg: #efefe9;          /* light off-white background */
-  --surface: #e8d9cd;     /* soft beige surface sections */
+  --surface: #e8d9cd;     /* soft beige surface blocks */
   --brand: #523d35;       /* rich brown brand color */
-  --brand-strong: #223030;/* deep green/teal for emphasis */
-  --text: #223030;        /* dark text for readability */
-  --muted: #959d90;       /* muted green-gray secondary text */
+  --brand-strong: #223030;/* deep green/teal emphasis (header/nav bg) */
+  --text: #223030;        /* primary text on light background */
+  --muted: #959d90;       /* secondary text */
   --accent: #bba58f;      /* warm tan accent */
-  --border: #959d90;      /* borders */
+  --border: #959d90;      /* borders and dividers */
 }
 
 /* ---- Reset-ish ---- */
@@ -23,93 +23,130 @@ html { box-sizing: border-box; }
 /* ---- Body (required: style body tag) ---- */
 body {
   margin: 0;
-  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* required: font-family */
-  font-weight: 300;       /* weight 1 */
-  font-size: 1rem;        /* size 1 */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* font-family present */
+  font-weight: 300;       /* weight #1 */
+  font-size: 1rem;        /* size #1 */
   line-height: 1.6;
   color: var(--text);
-  background: linear-gradient(180deg, var(--bg), var(--surface)); /* required: background color */
+  background: var(--bg);  /* uses #efefe9 */
 }
 
 /* Layout helper */
 .container { width: min(1100px, 92%); margin-inline: auto; }
 
 /* ---- Headings (required: h1, h2) ---- */
-h1, h2 { margin-block: 0.6em 0.3em; font-weight: 700; line-height: 1.2; } /* weight 2 */
-h1 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); } /* size 2 */
-h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }    /* size 3 */
+h1, h2 {
+  margin-block: 0.6em 0.3em;
+  line-height: 1.2;
+  color: var(--brand-strong);
+  font-weight: 700;       /* weight #2 */
+}
+h1 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); } /* size #2 */
+h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }    /* size #3 */
 
 /* ---- Paragraphs (required: p) ---- */
 p { margin-block: 0.75em; color: var(--text); }
 
-/* ---- Header / Branding ---- */
+/* =======================================
+   HEADER / BRANDING (high-contrast fixes)
+   ======================================= */
 .site-header {
-  background: var(--brand-strong);  /* deep teal/dark green */
+  background: var(--brand-strong);          /* #223030: dark header for contrast */
   border-bottom: 1px solid var(--border);
+  /* blur only matters if translucent; we keep solid for contrast */
 }
 
+.site-title { margin: 0.5rem 0 0; }
 .site-title .brand {
-  color: var(--accent);  /* warm tan highlight */
-  border-bottom: 4px solid var(--accent);
+  color: var(--accent);                      /* #bba58f */
+  letter-spacing: 0.5px;
+  border-radius: 4px;                        /* border radius */
+  padding-bottom: 2px;
 }
 
 .site-slogan {
-  color: var(--surface); /* soft beige for contrast */
+  margin: 0.25rem 0 0.75rem;
+  color: var(--surface);                     /* #e8d9cd for softer contrast */
 }
 
-/* ---- Navigation (flex horizontal, no underline, 48px targets, way-finding) ---- */
+/* =======================================
+   NAVIGATION (always visible; way-finding)
+   ======================================= */
 .site-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-  display: flex;                                      /* flexbox */
+  padding: 0.25rem 0;
+  display: flex;                             /* flexbox horizontal */
   gap: 0.5rem;
 }
+
 .site-nav a {
   display: inline-flex;
   align-items: center;
-  height: 48px;                                       /* min 48px */
+  justify-content: center;
+  height: 48px;                              /* large tap target */
   padding: 0 14px;
-  text-decoration: none;                              /* remove underline */
-  color: var(--text);
-  border-radius: 10px;                                /* border radius */
-  transition: transform 120ms ease, background-color 120ms ease, color 120ms ease;
-}
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  background: var(--border);
-  color: #e8d9cd;
-  transform: translateY(-1px);
+  text-decoration: none;                     /* remove underline in header */
+  color: var(--bg);                          /* #efefe9: light text on dark header */
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 500;                          /* stronger default for readability */
+  transition: background-color 150ms ease, color 150ms ease, transform 120ms ease, box-shadow 120ms ease;
   outline: none;
 }
-/* Way-finding: current page */
+
+/* Hover/Focus: clear feedback, high contrast */
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--brand);                  /* #523d35 (brown) */
+  color: var(--bg);                          /* off-white text */
+  transform: translateY(-1px);
+}
+
+/* Keyboard focus ring for accessibility */
+.site-nav a:focus-visible {
+  box-shadow: 0 0 0 3px var(--accent);       /* tan focus outline */
+}
+
+/* Active page (way-finding): light pill on dark header */
 .site-nav a[aria-current="page"] {
-  background: var(--brand-strong);
-  color: #959d90;
+  background: var(--surface);                /* #e8d9cd (beige) */
+  color: var(--brand-strong);                /* #223030 (dark) */
   font-weight: 700;
+  box-shadow: inset 0 -3px 0 0 var(--accent);
 }
 
 /* ---- Lists (bullet type, spacing, definition list styling) ---- */
 .fancy-list {
-  list-style-type: square;                            /* change bullet type */
-  padding-left: 1.2rem;                               /* padding */
-  margin: 0.5rem 0 1rem 0;                            /* margin */
+  list-style-type: square;                   /* change bullet type */
+  padding-left: 1.2rem;                      /* padding */
+  margin: 0.5rem 0 1rem 0;                   /* margin */
 }
 .fancy-list li::marker { color: var(--accent); }
 
-.spaced-list { padding-left: 1.3rem; margin: 0.5rem 0 1.25rem 0; }
+.spaced-list {
+  padding-left: 1.3rem;
+  margin: 0.5rem 0 1.25rem 0;
+}
 .spaced-list li { margin-block: 0.35rem; }
 
-.terms { border-left: 4px solid var(--brand); padding-left: 0.9rem; }
+/* Definition list styling (style the definition list) */
+.terms {
+  border-left: 4px solid var(--brand);
+  padding-left: 0.9rem;
+  background: color-mix(in srgb, var(--surface) 40%, transparent);
+  border-radius: 8px;
+}
 .terms dt { font-weight: 700; color: var(--brand); }
-.terms dd { margin: 0 0 0.75rem 0; }
+.terms dd { margin: 0 0 0.75rem 0; color: var(--text); }
 
-/* ---- Card (borders demo) ---- */
+/* ---- Cards / Borders demo ---- */
 .card {
-  background: #959d90;
-  border: 2px dashed var(--border);                   /* color/type/thickness */
-  border-radius: 12px;                                /* border radius */
+  background: var(--surface);
+  border: 2px dashed var(--border);          /* border color/type/thickness */
+  border-radius: 12px;                       /* border radius */
   padding: 1rem;
+  color: var(--brand-strong);
 }
 
 /* ---- Content links (hover pseudo-class) ---- */
@@ -117,10 +154,12 @@ main a {
   color: var(--brand);
   text-decoration: underline;
   text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  transition: color 120ms ease, text-decoration-thickness 120ms ease;
 }
 main a:hover,
 main a:focus-visible {
-  color: var(--accent);                               /* hover effect for links */
+  color: var(--accent);                      /* hover state affecting links */
   text-decoration-thickness: 3px;
   outline: none;
 }
@@ -133,16 +172,20 @@ main a:focus-visible {
   color: var(--muted);
 }
 
+/* ---- Optional utility (medium weight for subheads/buttons) ---- */
+.medium { font-weight: 500; }                /* additional weight in use */
+
 /* ================================
-   Comments (required for rubric)
-   - External stylesheet in use
-   - Google Font loaded in HTML head
-   - font-family set; weights (300,700) + optional 500
-   - Multiple font sizes (base, h1, h2)
-   - Styled body, h1, h2, p, nav
-   - Lists: custom bullet, margins, padding, definition list styling
-   - Borders: color/type/thickness + radius
-   - Nav: flex horizontal, no underline, 48px targets, way-finding via [aria-current]
-   - Link hover state in content
-   - Background + text colors (replace HEX tokens with final palette)
+   Comments (for rubric verification)
+   - External stylesheet in use.
+   - Google Font loaded in HTML head (Poppins).
+   - font-family set here; weights: 300, 500 (.medium), 700.
+   - Multiple font sizes: base 1rem, h1/h2 via clamp().
+   - Styled body, h1, h2, p, nav.
+   - Lists: custom bullet type; margins & padding; definition list styled.
+   - Borders: color/type/thickness + border-radius (see .card, header brand).
+   - Navigation: flex horizontal, no underline, 48px min target, visible by default.
+   - Way-finding: [aria-current="page"] gets high-contrast pill.
+   - Pseudo-class: hover/focus-visible styles for anchors in main content.
+   - Colors: body uses #efefe9; header uses dark #223030 for readability.
    ================================ */
