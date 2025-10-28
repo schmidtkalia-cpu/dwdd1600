@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kalia Schmidt’s Portfolio – About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About page for Kalia Schmidt’s Portfolio." />
+  <meta name="author" content="Kalia Schmidt" />
+  <!-- Google Font + CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><span class="brand">Kalia Schmidt’s Portfolio</span></h1>
+      <p class="site-slogan">Graphic Design • Selected Work • Skills</p>
+
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page" class="active">About Me</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>About Me</h1>
+    <p>
+      I’m building a portfolio that makes it simple for people to explore my projects and
+      understand my design perspective—especially employers who want to evaluate fit quickly.
+    </p>
+
+    <h2>Border Demo</h2>
+    <p class="card">
+      This “card” demonstrates border color, type, thickness, and radius. It also shows how content
+      blocks can be framed without clutter.
+    </p>
+
+    <h2>Useful Links</h2>
+    <p>
+      Validate HTML with the
+      <a href="https://validator.w3.org/" target="_blank" rel="noopener">HTML validator</a>
+      and CSS with the
+      <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">CSS validator</a>.
+      Hover to see the pseudo-class effect.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Kalia Schmidt</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

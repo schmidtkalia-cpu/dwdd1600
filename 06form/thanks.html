@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Thanks – Kalia Schmidt’s Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Confirmation page for form submission." />
+  <meta http-equiv="refresh" content="5; url=index.html">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Keep the main layout minimal here */
+    main { padding-block: 3rem; text-align: center; }
+    .tick { font-size: 3rem; line-height: 1; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><span class="brand">Kalia Schmidt’s Portfolio</span></h1>
+      <p class="site-slogan">Graphic Design • Selected Work • Skills</p>
+      <!-- Intentionally no 'Thanks' link in nav per assignment; standard nav included -->
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="tick" aria-hidden="true">✅</p>
+    <h1>Thank you!</h1>
+    <p>Your request has been received. I’ll be in touch soon.</p>
+    <p>You’ll be redirected to the home page in 5 seconds…</p>
+    <p><a href="index.html" class="btn-link">Skip the wait and go now</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Kalia Schmidt</p>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

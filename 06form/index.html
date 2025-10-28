@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kalia Schmidt’s Portfolio – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Homepage for Kalia Schmidt’s Portfolio." />
+  <meta name="author" content="Kalia Schmidt" />
+  <!-- Google Font + CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><span class="brand">Kalia Schmidt’s Portfolio</span></h1>
+      <p class="site-slogan">Graphic Design • Selected Work • Skills</p>
+
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html" aria-current="page" class="active">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Welcome</h1>
+
+    <!-- Floated hero image with caption -->
+    <figure class="hero">
+      <img src="images/portrait.jpg"
+           alt="Picture of Kalia Schmidt"
+           width="1200" height="800">
+      <figcaption>Kalia Schmidt</figcaption>
+    </figure>
+
+    <p>
+      The goal: make it easy for employers and design-curious visitors to quickly see my projects
+      and get a feel for my style and process. This build uses my real site concept so it can evolve
+      into a full portfolio.
+    </p>
+
+    <p>
+      Visit the <a href="gallery.html">Gallery</a> to view my curated design images.
+    </p>
+
+    <h2>Featured Highlights</h2>
+    <ul class="fancy-list">
+      <li>Clean, accessible navigation (five sections ready)</li>
+      <li>Strong typography and cohesive palette</li>
+      <li>List, border, hover effects, and now image layout</li>
+    </ul>
+
+    <h2>Roadmap</h2>
+    <ol class="spaced-list">
+      <li>Add case studies to <strong>My Work</strong> with images and captions</li>
+      <li>Summarize tools and processes in <strong>Skills</strong></li>
+      <li>Build a contact form on <strong>Contact Me</strong></li>
+    </ol>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Kalia Schmidt</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

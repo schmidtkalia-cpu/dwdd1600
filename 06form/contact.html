@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kalia Schmidt’s Portfolio – Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact form to inquire about design projects with Kalia Schmidt." />
+  <meta name="author" content="Kalia Schmidt" />
+  <!-- Google Font + CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><span class="brand">Kalia Schmidt’s Portfolio</span></h1>
+      <p class="site-slogan">Graphic Design • Selected Work • Skills</p>
+
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" aria-current="page" class="active">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Start a Project</h1>
+    <p class="intro">Tell me about your project. I’ll get back to you with next steps and a quick estimate.</p>
+
+    <form class="contact-form" action="thanks.html" method="get">
+      <!-- ===== Your Info ===== -->
+      <fieldset>
+        <legend>Your Info</legend>
+
+        <label class="stack">
+          <span>Full name <strong class="req">(required)</strong></span>
+          <input type="text" name="name" required placeholder="Jane Doe" autocomplete="name">
+        </label>
+
+        <label class="stack">
+          <span>Email <strong class="req">(required)</strong></span>
+          <input type="email" name="email" required placeholder="jane@email.com" autocomplete="email">
+        </label>
+
+        <label class="stack">
+          <span>Phone</span>
+          <input type="tel" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+        </label>
+
+        <div class="stack">
+          <span class="group-label">Preferred contact</span>
+          <label class="choice"><input type="radio" name="contact_pref" value="email" checked> Email</label>
+          <label class="choice"><input type="radio" name="contact_pref" value="phone"> Phone</label>
+          <label class="choice"><input type="radio" name="contact_pref" value="text"> Text</label>
+        </div>
+
+        <label class="stack">
+          <span>Best time to reach you</span>
+          <select name="best_time">
+            <option value="">Select a window…</option>
+            <option>Morning (8–11am)</option>
+            <option>Afternoon (12–4pm)</option>
+            <option>Evening (5–8pm)</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- ===== Project Details ===== -->
+      <fieldset>
+        <legend>Project Details</legend>
+
+        <label class="stack">
+          <span>Project type <strong class="req">(required)</strong></span>
+          <select name="project_type" required>
+            <option value="">Choose one…</option>
+            <option>Brand Identity</option>
+            <option>Editorial / Layout</option>
+            <option>Poster / Campaign</option>
+            <option>Packaging</option>
+            <option>Illustration</option>
+            <option>Web Design</option>
+          </select>
+        </label>
+
+        <div class="stack">
+          <span class="group-label">Which services do you need?</span>
+          <label class="choice"><input type="checkbox" name="services" value="logo"> Logo / Marks</label>
+          <label class="choice"><input type="checkbox" name="services" value="typography"> Typography & Styles</label>
+          <label class="choice"><input type="checkbox" name="services" value="brand-kit"> Brand Kit & Guidelines</label>
+          <label class="choice"><input type="checkbox" name="services" value="print"> Print Collateral</label>
+          <label class="choice"><input type="checkbox" name="services" value="web"> Web Components</label>
+        </div>
+
+        <label class="stack">
+          <span>Target budget (USD)</span>
+          <input type="text" name="budget" placeholder="e.g., 2,500–5,000">
+        </label>
+
+        <label class="stack">
+          <span>Timeline</span>
+          <select name="timeline">
+            <option value="">Select…</option>
+            <option>2–3 weeks</option>
+            <option>1–2 months</option>
+            <option>Flexible</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!-- ===== Style & Deliverables ===== -->
+      <fieldset>
+        <legend>Style & Deliverables</legend>
+
+        <div class="stack">
+          <span class="group-label">Brand tone (pick all that fit)</span>
+          <label class="choice"><input type="checkbox" name="tone" value="modern"> Modern</label>
+          <label class="choice"><input type="checkbox" name="tone" value="elegant"> Elegant</label>
+          <label class="choice"><input type="checkbox" name="tone" value="playful"> Playful</label>
+          <label class="choice"><input type="checkbox" name="tone" value="bold"> Bold</label>
+        </div>
+
+        <label class="stack">
+          <span>Project brief <strong class="req">(required)</strong></span>
+          <textarea name="brief" required rows="6" placeholder="Give me a quick overview, goals, audience, and any must-have elements."></textarea>
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Send Request</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Kalia Schmidt</p>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
