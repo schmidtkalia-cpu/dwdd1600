@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kalia Schmidt’s Portfolio – Location</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Location page with a responsive Google Map and company contact details." />
+  <meta name="author" content="Kalia Schmidt" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inline">
+      <div class="branding">
+        <img src="images/logo.png" alt="Logo for Kalia Schmidt’s portfolio" class="site-logo" width="50" height="32">
+        <div class="branding-text">
+          <h1 class="site-title"><span class="brand">Kalia Schmidt’s Portfolio</span></h1>
+          <p class="site-slogan">Graphic Design • Selected Work • Skills</p>
+        </div>
+      </div>
+
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="location.html" aria-current="page" class="active">Location</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h1>Location</h1>
+    <p>Here’s where you can find me, plus full contact details for inquiries and collaborations.</p>
+
+    <section aria-labelledby="map-heading">
+      <h2 id="map-heading">Map</h2>
+      <div class="responsive-embed map-embed">
+        <!-- Replace the q= address with your exact studio/business address if different -->
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Utah%20Valley%20University%2C%20800%20W%20University%20Pkwy%2C%20Orem%2C%20UT%2084058&output=embed"
+          title="Map to Kalia Schmidt’s Portfolio"></iframe>
+      </div>
+
+      <address class="contact-block">
+        <strong>Kalia Schmidt – Studio</strong><br>
+        800 W University Pkwy<br>
+        Orem, UT 84058<br>
+        United States
+      </address>
+
+      <p class="contact-block">
+        <strong>Email:</strong> <a href="mailto:kalia@example.com">kalia@example.com</a><br>
+        <strong>Phone:</strong> <a href="tel:+18015551234">(801) 555-1234</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Kalia Schmidt</p>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

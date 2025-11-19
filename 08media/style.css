@@ -1,0 +1,455 @@
+/* ================================
+   Unit 04–07 – Site Styles (External CSS)
+   Concept: Kalia Schmidt’s Portfolio
+   Palette: #223030, #523d35, #959d90, #bba58f, #e8d9cd, #efefe9
+   ================================ */
+
+/* ---- Color Tokens ---- */
+:root {
+  --bg: #fff;          /* light off-white background */
+  --surface: #e8d9cd;     /* soft beige surface blocks */
+  --brand: #523d35;       /* rich brown brand color */
+  --brand-strong: #223030;/* deep green/teal for header/nav */
+  --text: #223030;        /* main text color */
+  --muted: #959d90;       /* secondary text */
+  --accent: #bba58f;      /* warm tan accent */
+  --border: #959d90;      /* borders and outlines */
+}
+
+/* ---- Reset + Box Model ---- */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* ---- Body ---- */
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ---- Page Structure ---- */
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+nav,
+main,
+footer {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+
+/* ---- Headings ---- */
+h1, h2 {
+  margin-block: 0.6em 0.3em;
+  line-height: 1.2;
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+h1 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
+h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+/* ---- Paragraphs ---- */
+p { margin-block: 0.75em; color: var(--text); }
+
+/* =======================================
+   HEADER / NAV / BRANDING
+   ======================================= */
+
+/* Gradient header background */
+.site-header {
+  background: linear-gradient(135deg, var(--brand-strong) 0%, var(--brand) 60%, var(--accent) 100%);
+  color: var(--bg);
+}
+
+/* Flexbox header with logo inline left of title, nav to right */
+.header-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-block: 0.75rem;
+}
+
+/* Branding section: logo and text inline */
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-logo {
+  width: 80px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.branding-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--bg);
+}
+
+.site-slogan {
+  margin: 0;
+  color: var(--surface);
+  font-size: 0.95rem;
+}
+
+/* Navigation layout */
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active,
+.site-nav a[aria-current="page"] {
+  background: var(--surface);
+  color: var(--brand-strong);
+}
+
+/* Responsive header: stack logo/title/nav on small screens */
+@media (max-width: 700px) {
+  .header-inline {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =======================================
+   MAIN CONTENT
+   ======================================= */
+main a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  transition: color 120ms ease, text-decoration-thickness 120ms ease;
+}
+main a:hover,
+main a:focus-visible {
+  color: var(--accent);
+  text-decoration-thickness: 3px;
+  outline: none;
+}
+
+/* ---- Fancy lists ---- */
+.fancy-list {
+  list-style-type: square;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 1rem 0;
+}
+.fancy-list li::marker { color: var(--accent); }
+
+.spaced-list {
+  padding-left: 1.3rem;
+  margin: 0.5rem 0 1.25rem 0;
+}
+.spaced-list li { margin-block: 0.35rem; }
+
+/* ---- Definition lists ---- */
+.terms {
+  border-left: 4px solid var(--brand);
+  padding-left: 0.9rem;
+  background: linear-gradient(135deg, var(--surface) 0%, #f7efe6 100%);
+  border-radius: 8px;
+}
+.terms dt { font-weight: 700; color: var(--brand); }
+.terms dd { margin: 0 0 0.75rem 0; color: var(--text); }
+
+/* ---- Cards ---- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--brand-strong);
+  clear: both;
+}
+
+/* =======================================
+   HERO / IMAGES / GALLERY
+   ======================================= */
+
+/* Home-page portrait image */
+figure.hero {
+  float: right;
+  width: clamp(220px, 35%, 420px);
+  margin: 0 0 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+figure.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+figure.hero figcaption {
+  font-size: 0.9rem;
+  color: var(--brand-strong);
+  padding: 0.5rem 0.75rem;
+  background: #f3e7da;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* ===== Hero image (full-width, centered on the middle) ===== */
+.hero-banner {
+  width: 100%;
+  max-height: 350px;   /* adjust 300–450px to taste */
+  overflow: hidden;
+  margin: 0 0 1.5rem 0;  /* a bit of space below the image */
+}
+
+.hero-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;          /* make image fill the banner box */
+  object-fit: cover;     /* crop to fill */
+  object-position: 90% 90%;
+  /* 50% (x) centers horizontally, 40% (y) shows below the very top.
+     Try 50% 50% for dead-center, or 50% 60% to slide lower. */
+}
+
+
+/* Gallery layout */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: stretch;
+}
+.gallery figure {
+  flex: 1 1 clamp(140px, 22%, 280px);
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.gallery figcaption {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  color: var(--brand-strong);
+  background: #f5ece3;
+}
+
+/* Hover drop shadow for gallery images */
+.gallery figure:hover,
+.gallery figure:focus-within {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+/* =======================================
+   CONTACT FORM
+   ======================================= */
+.contact-form {
+  max-width: 820px;
+  margin: 0 0 2rem 0;
+}
+.contact-form .intro { color: var(--text); }
+
+.contact-form fieldset {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  background: #f5ece3;
+}
+.contact-form legend {
+  padding: 0 0.5rem;
+  font-weight: 700;
+  color: var(--brand-strong);
+  background: #f3e7da;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.contact-form .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0 0 0.9rem 0;
+}
+.contact-form .group-label {
+  font-weight: 500;
+  color: var(--brand-strong);
+}
+.contact-form .req { color: var(--brand); }
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: #f9f7f2;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(187, 165, 143, 0.5);
+}
+
+.contact-form .choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 1rem 0.4rem 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border: 2px solid var(--brand);
+  border-radius: 12px;
+  background: var(--brand);
+  color: var(--bg);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--brand-strong);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+.btn-link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+/* =======================================
+   FOOTER
+   ======================================= */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  clear: both;
+}
+
+/* =======================================
+   UTILITIES
+   ======================================= */
+.medium { font-weight: 500; }
+
+/* ===============================
+   Unit 08 – Media, Tables, Map
+   =============================== */
+
+/* Responsive embeds (YouTube, Google Maps, Vimeo) */
+.responsive-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f3e7da;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 0 1rem 0;
+}
+.responsive-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Audio styling */
+.audio-player {
+  width: 100%;
+  margin: 0.5rem 0 0.75rem 0;
+}
+
+/* Simple contact/address block */
+.contact-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0 1rem 0;
+}
+
+/* Data table: full width, zebra, hover, custom header colors, no default borders */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin: 0.75rem 0 1.25rem 0;
+  font-size: 0.98rem;
+}
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 0.7rem 0.75rem;
+  border: none; /* remove default borders */
+}
+.data-table thead th {
+  background: var(--brand-strong);
+  color: var(--bg);
+  font-weight: 700;
+}
+.data-table tbody tr:nth-child(even) {
+  background: #f5ece3; /* zebra */
+}
+.data-table tbody tr:nth-child(odd) {
+  background: #fbf7f2;
+}
+.data-table tbody tr:hover {
+  background: #efe3d6; /* hover effect */
+}

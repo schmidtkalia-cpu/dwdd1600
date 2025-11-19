@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kalia Schmidt’s Portfolio – Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact form to reach out to designer Kalia Schmidt." />
+  <meta name="author" content="Kalia Schmidt" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inline">
+      <div class="branding">
+        <img src="images/logo.png"
+             alt="Logo for Kalia Schmidt’s portfolio"
+             class="site-logo"
+             width="50"
+             height="32">
+
+        <div class="branding-text">
+          <h1 class="site-title">
+            <span class="brand">Kalia Schmidt’s Portfolio</span>
+          </h1>
+          <p class="site-slogan">Graphic Design • Selected Work • Skills</p>
+        </div>
+      </div>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="contact.html" aria-current="page" class="active">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h1>Contact Me</h1>
+    <p class="intro">
+      I’d love to hear from you. Use the form below to ask a question,
+      talk about a project, or request more examples of my work.
+    </p>
+
+    <form class="contact-form" action="thanks.html" method="get">
+      <fieldset>
+        <legend>Basic information</legend>
+
+        <div class="stack">
+          <label class="group-label" for="name">
+            Name <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="stack">
+          <label class="group-label" for="email">
+            Email <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="stack">
+          <label class="group-label" for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Optional">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Project details</legend>
+
+        <div class="stack">
+          <label class="group-label" for="project-type">Type of project</label>
+          <select id="project-type" name="project-type">
+            <option value="">Select an option</option>
+            <option value="branding">Branding / Logo</option>
+            <option value="editorial">Editorial / Layout</option>
+            <option value="illustration">Illustration</option>
+            <option value="other">Other / Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="stack">
+          <span class="group-label">Services you’re interested in</span>
+          <label class="choice">
+            <input type="checkbox" name="services" value="concept">
+            Concept development
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="services" value="design">
+            Design &amp; layout
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="services" value="illustration">
+            Illustration
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="services" value="consult">
+            General design feedback
+          </label>
+        </div>
+
+        <div class="stack">
+          <span class="group-label">Timeline</span>
+          <label class="choice">
+            <input type="radio" name="timeline" value="soon">
+            As soon as possible
+          </label>
+          <label class="choice">
+            <input type="radio" name="timeline" value="month">
+            Within the next month
+          </label>
+          <label class="choice">
+            <input type="radio" name="timeline" value="flexible">
+            Flexible / just exploring
+          </label>
+        </div>
+
+        <div class="stack">
+          <label class="group-label" for="message">
+            Tell me a bit about your project
+          </label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+      </fieldset>
+
+      <p>
+        <button type="submit" class="btn-primary">Send message</button>
+        <a href="index.html" class="btn-link">Back to home</a>
+      </p>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Kalia Schmidt</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
