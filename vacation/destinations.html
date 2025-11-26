@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Strasbourg Highlights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="branding">
+      <div class="logo-image">
+      <img src="images/logo.png" alt="Strasbourg Escapes Logo">
+      </div>
+      <div class="brand-text">
+        <p class="site-title">Strasbourg Escapes</p>
+        <p class="site-tagline">Quiet canals. Warm light. Old-world charm.</p>
+      </div>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="destinations.html">Highlights</a></li>
+        <li><a href="video.html">Learn More</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Plan Your Trip</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+
+    <header class="destination-intro">
+      <h1>Strasbourg Highlights</h1>
+      <p>
+        A curated look at Strasbourg’s most iconic and atmospheric locations — each of which
+        can be woven into your custom itinerary.
+          <strong>Click each to learn more!</strong>
+      </p>
+    </header>
+
+    <div class="destination-grid">
+
+      <a href="petite-france.html" class="destination-link">
+        <figure class="destination-card">
+          <img src="images/petite-france.JPG" alt="Petite France canal">
+          <figcaption>
+            <strong>Petite France</strong>
+            Half-timbered houses, slow canals, and cobblestone paths.
+          </figcaption>
+        </figure>
+      </a>
+
+      <a href="cathedral.html" class="destination-link">
+        <figure class="destination-card">
+          <img src="images/strasbourg-cathedral.JPG" alt="Strasbourg Cathedral">
+          <figcaption>
+            <strong>Strasbourg Cathedral</strong>
+            A Gothic landmark with panoramic views from the tower.
+          </figcaption>
+        </figure>
+      </a>
+
+      <a href="christmas-markets.html" class="destination-link">
+        <figure class="destination-card">
+          <img src="images/christmas-market.jpeg" alt="Strasbourg Christmas Market">
+          <figcaption>
+            <strong>Christmas Markets</strong>
+            Warm lights, local crafts, and mulled wine in the “Capital of Christmas.”
+          </figcaption>
+        </figure>
+      </a>
+
+      <a href="orangerie-park.html" class="destination-link">
+        <figure class="destination-card">
+          <img src="images/orangerie.jpeg" alt="Parc de l’Orangerie">
+          <figcaption>
+            <strong>Parc de l’Orangerie</strong>
+            Lakes, storks, and quiet walks in Strasbourg’s favorite park.
+          </figcaption>
+        </figure>
+      </a>
+
+      <a href="european-quarter.html" class="destination-link">
+        <figure class="destination-card">
+          <img src="images/european-quarter.webp" alt="European Parliament Strasbourg">
+          <figcaption>
+            <strong>European Quarter</strong>
+            Sleek contemporary buildings and the seat of the European Parliament.
+          </figcaption>
+        </figure>
+      </a>
+
+      <a href="alsace-wine-route.html" class="destination-link">
+        <figure class="destination-card">
+          <img src="images/alsace-wine-route.jpeg" alt="Alsace Wine Route">
+          <figcaption>
+            <strong>Alsace Wine Route</strong>
+            Vineyards, small villages, and endless tastings along a historic route.
+          </figcaption>
+        </figure>
+      </a>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Strasbourg Escapes</p>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>
