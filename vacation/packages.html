@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Strasbourg Packages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="branding">
+      <div class="logo-image">
+      <img src="images/logo.png" alt="Strasbourg Escapes Logo">
+      </div>
+      <div class="brand-text">
+        <p class="site-title">Strasbourg Escapes</p>
+        <p class="site-tagline">Quiet canals. Warm light. Old-world charm.</p>
+      </div>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Highlights</a></li>
+        <li><a href="video.html">Learn More</a></li>
+        <li><a class="active" href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Plan Your Trip</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+
+    <h1>Sample Strasbourg Packages</h1>
+    <p>
+      Every package includes lodging, suggested daily itineraries,
+      and on-the-ground local guidance. Pricing is sample-only and can be tailored.
+    </p>
+
+    <div class="package-grid">
+
+      <article class="package-card">
+        <img src="images/package-old-town.jpg" alt="Old town Strasbourg">
+        <div class="package-body">
+          <h2>Old Town Discovery</h2>
+          <p class="package-meta">3 days / 2 nights</p>
+          <p>
+            A compact, immersive escape into Strasbourg’s historic quarter.
+            Walk everywhere, eat local, and soak in cathedral views.
+          </p>
+          <p>
+            Hotel:
+            <a target="_blank" href="https://www.hotel-rohan.com/en/">
+              Hôtel Rohan – Strasbourg Centre
+            </a><br>
+            Car:
+            <a target="_blank" href="https://www.europcar.com/en-us/places/car-rental-france/strasbourg/strasbourg">
+              Europcar – Strasbourg city or station pickup
+            </a>
+          </p>
+          <p class="package-price">From $629 / person</p>
+        </div>
+      </article>
+
+      <article class="package-card">
+        <img src="images/package-christmas.jpeg" alt="Christmas Market Strasbourg">
+        <div class="package-body">
+          <h2>Christmas Market Magic</h2>
+          <p class="package-meta">4 days / 3 nights</p>
+          <p>
+            Explore Strasbourg’s famous Christmas markets, lights, and winter food.
+            Ideal for couples or friends who love seasonal city breaks.
+          </p>
+          <p>
+            Hotel:
+            <a target="_blank" href="https://regent-petite-france.com/en/">
+              Hôtel &amp; Spa Régent Petite France
+            </a><br>
+            Car:
+            <a target="_blank" href="https://www.avis.com/en/locations/fr/strasbourg">
+              Avis – Strasbourg
+            </a>
+          </p>
+          <p class="package-price">From $899 / person</p>
+        </div>
+      </article>
+
+      <article class="package-card">
+        <img src="images/package-wine-route.jpeg" alt="Alsace Wine Route">
+        <div class="package-body">
+          <h2>Wine Route Retreat</h2>
+          <p class="package-meta">6 days / 5 nights</p>
+          <p>
+            Discover vineyards and half-timbered villages along the Alsace Wine Route,
+            using Strasbourg as your gateway and Colmar as a base.
+          </p>
+          <p>
+            Hotel:
+            <a target="_blank" href="https://www.hotel-le-marechal.com/en/">
+              Hotel Le Maréchal – Colmar (La Petite Venise)
+            </a><br>
+            Car:
+            <a target="_blank" href="https://www.sixt.com/car-rental/france/strasbourg/">
+              SIXT – Strasbourg
+            </a>
+          </p>
+          <p class="package-price">From $1,179 / person</p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Strasbourg Escapes</p>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>
