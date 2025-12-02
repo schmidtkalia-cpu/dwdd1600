@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Merci!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="4; url=index.html">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="branding">
+      <div class="logo-image">
+      <img src="images/logo.png" alt="Strasbourg Escapes Logo">
+      </div>
+      <div class="brand-text">
+        <p class="site-title">Strasbourg Escapes</p>
+        <p class="site-tagline">Quiet canals. Warm light. Old-world charm.</p>
+      </div>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="thanks-main">
+  <div class="container card">
+    <div class="thanks-icon">✓</div>
+    <h1>Merci! Your request has been received.</h1>
+    <p>We’ll send your personalized Strasbourg itinerary soon.</p>
+    <p>You’ll be redirected shortly.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Strasbourg Escapes</p>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>

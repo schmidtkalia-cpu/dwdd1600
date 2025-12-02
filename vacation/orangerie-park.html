@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Parc de l’Orangerie – Strasbourg Highlight</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="branding">
+      <div class="logo-image">
+        <img src="images/logo.png" alt="Strasbourg Escapes Logo">
+      </div>
+      <div class="brand-text">
+        <p class="site-title">Strasbourg Escapes</p>
+        <p class="site-tagline">Quiet canals. Warm light. Old-world charm.</p>
+      </div>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="destinations.html">Highlights</a></li>
+        <li><a href="video.html">Learn More</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Plan Your Trip</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container card">
+
+    <figure class="destination-hero">
+      <img src="images/orangerie-1.jpg" alt="Pathway through Parc de l’Orangerie with trees">
+    </figure>
+
+    <h1>Parc de l’Orangerie</h1>
+    <p>
+      Parc de l’Orangerie is Strasbourg’s classic city park: wide paths, a lake,
+      lawns for picnics, and storks nesting in the trees.
+    </p>
+
+    <h2>How We Use It in Itineraries</h2>
+    <ul class="clean">
+      <li>Slow morning walks or jogs for travelers who like green spaces.</li>
+      <li>Family-friendly time for kids to run and explore.</li>
+      <li>Pairing with a visit to the nearby European Quarter for a half-day outside the old town.</li>
+    </ul>
+
+    <p style="margin-top:1.5rem;">
+      If you’d like time built in for relaxing in parks, just mention it in the
+      <a href="contact.html">trip request form</a> and we’ll adjust your schedule.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Strasbourg Escapes</p>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>
